@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="t"
+            type="com.iot.covid.duantotnghiep.model.doctors.Token" />
+        <variable
+            name="doctor"
+            type="com.iot.covid.duantotnghiep.model.doctors.Doctor" />
+    </data>
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".doctor.DoctorInformation">
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <LinearLayout
+               android:id="@+id/linearLayout"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:orientation="vertical">
+
+               <include layout="@layout/toolbar_doctor_information" />
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="15dp"
+                   android:orientation="horizontal">
+
+                   <ImageView
+                       android:layout_width="120dp"
+                       android:layout_height="120dp"
+                       android:src="@drawable/logo_info"></ImageView>
+
+                   <LinearLayout
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:orientation="vertical"
+                       android:paddingLeft="15dp"
+                       android:paddingTop="10dp">
+
+                       <TextView
+                           android:id="@+id/txtInformationFullName"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="@{doctor.name}"
+                           android:textColor="@color/black"
+                           android:textSize="22dp"></TextView>
+
+                       <TextView
+                           android:id="@+id/txtInformationEmail"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="5dp"
+                           android:text="@{doctor.password}"
+                           android:textSize="16dp"></TextView>
+
+                   </LinearLayout>
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="15dp"
+                   android:layout_marginRight="15dp"
+                   android:layout_marginBottom="10dp"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Cập nhập thông tin"
+                       android:textColor="@color/black"
+                       android:textSize="16dp"
+                       android:textStyle="bold"></TextView>
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="2dp"
+                       android:layout_marginTop="10dp"
+                       android:background="@color/maincolor" />
+               </LinearLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginRight="20dp"
+                   android:enabled="false"
+                   android:hint="Họ và tên"
+                   app:startIconDrawable="@drawable/ic_phone">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@{doctor.name}">
+
+                   </com.google.android.material.textfield.TextInputEditText>
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginRight="20dp"
+                   android:enabled="false"
+                   android:hint="passowrd"
+                   app:startIconDrawable="@drawable/user_login">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/edtPassword"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@{doctor.password}">
+
+                   </com.google.android.material.textfield.TextInputEditText>
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginRight="20dp"
+                   android:enabled="false"
+                   android:hint="token"
+                   app:startIconDrawable="@drawable/ic_calendar">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/edtToken"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:lines="1"
+                       android:maxLines="1"
+                       android:text="@{doctor.tokenn}">
+
+                   </com.google.android.material.textfield.TextInputEditText>
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginRight="20dp"
+                   android:enabled="false"
+                   android:hint="state"
+                   app:startIconDrawable="@drawable/ic_sigup_email">
+
+                   <com.google.android.material.textfield.TextInputEditText
+                       android:id="@+id/state"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="@{Boolean.toString(doctor.state)}">
+
+                   </com.google.android.material.textfield.TextInputEditText>
+               </com.google.android.material.textfield.TextInputLayout>
+
+           </LinearLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
+           <RelativeLayout
+               android:layout_width="300dp"
+               android:layout_height="match_parent"
+               android:layout_gravity="start"
+               android:background="@color/white">
+               <include
+                   layout = "@layout/main_nav_drawer"/>
+           </RelativeLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

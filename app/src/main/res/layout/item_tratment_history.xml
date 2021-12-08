@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="track"
+            type="com.iot.covid.duantotnghiep.model.device.TrackHistory" />
+    </data>
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:id="@+id/treatment_item"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                >
+                <TextView
+                    android:textSize="20sp"
+                    android:text="@{track.value}"
+                    android:textColor="@color/textColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="0.8"
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textColor="@color/textColor"
+                    android:text="@{track.dateFormatted}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/TextGray"
+            />
+    </LinearLayout>
+</layout>

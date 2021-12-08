@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.iot.covid.duantotnghiep">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".doctor.utils.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_logo_login"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_logo_login"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DuAnTotNghiep"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".doctor.ShowHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.TreatmentDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".utils.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".patient.PatientInformation"
+            android:exported="false" />
+        <activity
+            android:name=".patient.PatientPersonalInformation"
+            android:exported="false" />
+        <activity
+            android:name=".patient.PatientMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".login.Login"
+            android:exported="true" />
+        <activity
+            android:name=".doctor.TreatmentHistory"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.SignUpTestLayout"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.NoticeDetails"
+            android:exported="false" />
+        <activity
+            android:name=".utils.HeartbeatChart"
+            android:exported="false" />
+        <activity
+            android:name=".utils.SpO2Chart"
+            android:exported="false" />
+        <activity
+            android:name=".utils.TemperatureChart"
+            android:exported="false" />
+        <activity
+            android:name=".doctor.PatientRecords"
+            android:exported="true" />
+        <activity
+            android:name=".doctor.DoctorInformation"
+            android:exported="true" />
+        <activity
+            android:name=".doctor.UrgentNotice"
+            android:exported="true" />
+        <activity
+            android:name=".doctor.MainActivity"
+            android:exported="true" />
+
+        <service
+            android:name=".doctor.service.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/TextGray" />
+    </application>
+
+</manifest>
