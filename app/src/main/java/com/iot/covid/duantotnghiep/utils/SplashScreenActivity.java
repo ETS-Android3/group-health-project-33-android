@@ -93,8 +93,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private void loginPatient(String username,String password){
 
-
-        Toast.makeText(getBaseContext(), "Bạn đang đăng nhập bằng tài khoản khách !", Toast.LENGTH_SHORT).show();
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("username",username);
         jsonObject.addProperty("password",password);

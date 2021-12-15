@@ -105,6 +105,7 @@ public class PatientMainActivity extends AppCompatActivity {
                 if (listAdd.contains(code)){
                     Toast.makeText(PatientMainActivity.this, "Đã tồn tại bệnh nhân này !", Toast.LENGTH_SHORT).show();
                 }else {
+                    dialog.dismiss();
                     findAndAdd(code);
                 }
 
