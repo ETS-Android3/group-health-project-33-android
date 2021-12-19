@@ -46,7 +46,7 @@
 
             <TextView
                 android:textSize="15sp"
-                android:text="@{treatment.dateFormatted}"
+                android:text="@{treatment.realTime}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

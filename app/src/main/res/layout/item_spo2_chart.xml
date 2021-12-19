@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
-                android:text="@{spo2.dateFormatted}"
+                android:text="@{spo2.realTime}"
                 >
 
             </TextView>

@@ -3,6 +3,7 @@ package com.iot.covid.duantotnghiep.patient.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,6 +59,15 @@ public class PatientAdapter extends RecyclerView.Adapter<PatientAdapter.ViewHold
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
            context.startActivity(intent);
         });
+        if (patientList.get(position).getState() == 0 ){
+            holder.patientBinding.itemPatient.setBackgroundColor(Color.rgb(209,231,221));
+        } else if (patientList.get(position).getState() == 1 ){
+            holder.patientBinding.itemPatient.setBackgroundColor(Color.rgb(207,244,252));
+        } else if (patientList.get(position).getState() == 2 ){
+            holder.patientBinding.itemPatient.setBackgroundColor(Color.rgb(255,243,205));
+        } else if (patientList.get(position).getState() == 3 ){
+            holder.patientBinding.itemPatient.setBackgroundColor(Color.rgb(248,215,218));
+        }
         holder.patientBinding.patientItem.setOnLongClickListener(view -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             String json = sharedPreferences.getString("arrayId",null);

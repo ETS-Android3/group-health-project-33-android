@@ -129,7 +129,7 @@
                                    android:id="@+id/txtDateHeartBeat"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="@{device.heart.get(device.heart.size()-1).dateFormatted}"
+                                   android:text="@{device.heart.get(device.heart.size()-1).realTime}"
                                    android:textColor="@color/TextGray"></TextView>
                            </LinearLayout>
                        </androidx.cardview.widget.CardView>
@@ -209,7 +209,7 @@
                                    android:id="@+id/txtDateSpo2"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="@{device.spO2.get(device.spO2.size()-1).dateFormatted}"
+                                   android:text="@{device.spO2.get(device.spO2.size()-1).realTime}"
                                    android:textColor="@color/TextGray"></TextView>
                            </LinearLayout>
                        </androidx.cardview.widget.CardView>
@@ -298,7 +298,7 @@
                                    android:textSize="15dp"
                                    android:layout_width="wrap_content"
                                    android:layout_height="wrap_content"
-                                   android:text="@{device.temp.get(device.temp.size()-1).dateFormatted}"
+                                   android:text="@{device.temp.get(device.temp.size()-1).realTime}"
                                    android:textColor="@color/TextGray">
                                </TextView>
                            </LinearLayout>

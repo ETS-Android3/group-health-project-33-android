@@ -24,7 +24,7 @@ public class HeartbeatChart extends AppCompatActivity {
 
         List<Heart> heart = (List<Heart>) getIntent().getSerializableExtra("heart");
 
-        Log.e("real time heart ",""+heart.get(0).getDateFormatted());
+       // Log.e("real time heart ",""+heart.get(0).getRealTime());
         adapter.setHeartList(heart);
         heartbeatChartBinding.rcvHeartBeatChar.setAdapter(adapter);
         heartbeatChartBinding.rcvHeartBeatChar.setHasFixedSize(false);

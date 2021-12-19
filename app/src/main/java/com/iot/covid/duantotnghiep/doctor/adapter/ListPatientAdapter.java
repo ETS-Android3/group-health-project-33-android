@@ -1,6 +1,7 @@
 package com.iot.covid.duantotnghiep.doctor.adapter;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -34,6 +35,15 @@ public class ListPatientAdapter extends RecyclerView.Adapter<ListPatientAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.itemListPatientBinding.setPatient(patientList.get(position));
         holder.itemListPatientBinding.executePendingBindings();
+        if (patientList.get(position).getState() == 0 ){
+            holder.itemListPatientBinding.itemPatient.setBackgroundColor(Color.rgb(209,231,221));
+        } else if (patientList.get(position).getState() == 1 ){
+            holder.itemListPatientBinding.itemPatient.setBackgroundColor(Color.rgb(207,244,252));
+        } else if (patientList.get(position).getState() == 2 ){
+            holder.itemListPatientBinding.itemPatient.setBackgroundColor(Color.rgb(255,243,205));
+        } else if (patientList.get(position).getState() == 3 ){
+            holder.itemListPatientBinding.itemPatient.setBackgroundColor(Color.rgb(248,215,218));
+        }
         holder.itemListPatientBinding.patientItem.setOnClickListener(v->{
             Intent i = new Intent( holder.itemListPatientBinding.getRoot().getContext(), PatientRecords.class);
             Bundle bundle = new Bundle();

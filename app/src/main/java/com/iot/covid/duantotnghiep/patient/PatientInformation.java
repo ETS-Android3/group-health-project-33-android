@@ -63,7 +63,7 @@ public class PatientInformation extends AppCompatActivity {
                         Log.e("RECORD-TAG","success ");
                         dataDevice = response.body();
                         informationBinding.setDevice(dataDevice);
-                        adapter.setTreatmentCourseList(dataDevice.getTreatment_course());
+                        adapter.setTreatmentCourseList(dataDevice.getTreatmentCourse());
                         informationBinding.rcvHistory.setAdapter(adapter);
                         informationBinding.rcvHistory.setHasFixedSize(true);
                         informationBinding.rcvHistory.setLayoutManager(new LinearLayoutManager(PatientInformation.this, RecyclerView.VERTICAL, false));

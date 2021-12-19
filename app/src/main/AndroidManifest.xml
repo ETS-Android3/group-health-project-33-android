@@ -15,6 +15,9 @@
         android:theme="@style/Theme.DuAnTotNghiep"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DetailTreatActivity"
+            android:exported="false" />
+        <activity
             android:name=".doctor.ShowHistoryActivity"
             android:exported="false" />
         <activity

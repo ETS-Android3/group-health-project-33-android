@@ -13,63 +13,67 @@
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         android:layout_height="wrap_content">
+
         <androidx.appcompat.widget.LinearLayoutCompat
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="horizontal"
+            android:id="@+id/item_patient"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <ImageView
-                android:src="@drawable/icon_userpatient"
                 android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:padding="10dp"
-                android:layout_height="100dp">
-            </ImageView>
+                android:src="@drawable/icon_userpatient"></ImageView>
+
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="10dp"
-                android:layout_height="match_parent">
+                android:padding="10dp">
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@{patient.name}"
-                    android:textSize="22dp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                </TextView>
+                    android:textSize="22dp"
+                    android:textStyle="bold"></TextView>
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                        <TextView
-                            android:text="Phòng "
-                            android:textSize="18sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:text="@{String.valueOf(patient.numberRoom)}"
-                            android:textSize="18sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                        </TextView>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phòng "
+                        android:textSize="18sp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(patient.numberRoom)}"
+                        android:textSize="18sp"></TextView>
                 </LinearLayout>
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                        <TextView
-                            android:text="Tuổi "
-                            android:textSize="18sp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
-                        </TextView>
-                        <TextView
-                            android:text="@{String.valueOf(patient.age)}"
-                            android:textSize="18sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                        </TextView>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tuổi "
+                        android:textSize="18sp"></TextView>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(patient.age)}"
+                        android:textSize="18sp"></TextView>
                 </LinearLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>

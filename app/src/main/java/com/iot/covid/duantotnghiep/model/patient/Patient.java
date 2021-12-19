@@ -39,19 +39,18 @@ public class Patient implements Serializable {
     @SerializedName("key_device")
     @Expose
     private String keyDevice;
+    @SerializedName("done")
+    @Expose
+    private String done;
     @SerializedName("state")
     @Expose
     private Integer state;
-
     @SerializedName("date_added")
     @Expose
     private String dateAdded;
-
     @SerializedName("homie_patient")
     @Expose
     private String homiePatient;
-
-
     @SerializedName("homie_phone")
     @Expose
     private Integer homiePhone;
@@ -65,15 +64,6 @@ public class Patient implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String get_id() {
-
-        return _id;
-    }
-
-    public void set_id(String _id) {
-        this._id = _id;
     }
 
     public String getName() {
@@ -140,12 +130,20 @@ public class Patient implements Serializable {
         this.keyDevice = keyDevice;
     }
 
-    public Integer getV() {
-        return v;
+    public String getDone() {
+        return done;
     }
 
-    public void setV(Integer v) {
-        this.v = v;
+    public void setDone(String done) {
+        this.done = done;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 
     public String getDateAdded() {
@@ -172,18 +170,23 @@ public class Patient implements Serializable {
         this.homiePhone = homiePhone;
     }
 
-    public Integer getState() {
-        return state;
+    public Integer getV() {
+        return v;
     }
 
-    public void setState(Integer state) {
-        this.state = state;
+    public void setV(Integer v) {
+        this.v = v;
     }
 
-    public Patient() {
+    public String get_id() {
+        return _id;
     }
 
-    public Patient(String _id,String name, String username, String password, Integer age, String birthDay, Integer phone, Integer numberRoom, String keyDevice, String dateAdded, String homiePatient, Integer homiePhone) {
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public Patient(String _id, String name, String username, String password, Integer age, String birthDay, Integer phone, Integer numberRoom, String keyDevice, String dateAdded, String homiePatient, Integer homiePhone) {
         this._id=_id;
         this.name = name;
         this.username = username;
@@ -196,6 +199,9 @@ public class Patient implements Serializable {
         this.dateAdded = dateAdded;
         this.homiePatient = homiePatient;
         this.homiePhone = homiePhone;
+    }
+
+    public Patient() {
     }
 
     @Override
@@ -211,6 +217,7 @@ public class Patient implements Serializable {
                 ", phone=" + phone +
                 ", numberRoom=" + numberRoom +
                 ", keyDevice='" + keyDevice + '\'' +
+                ", done='" + done + '\'' +
                 ", state=" + state +
                 ", dateAdded='" + dateAdded + '\'' +
                 ", homiePatient='" + homiePatient + '\'' +

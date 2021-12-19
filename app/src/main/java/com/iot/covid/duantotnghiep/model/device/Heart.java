@@ -9,14 +9,14 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 
 public class Heart implements Serializable {
-
     @SerializedName("value")
     @Expose
-    private Double value;
+    private Integer value;
     @SerializedName("real_time")
     @Expose
     private String realTime;
@@ -24,11 +24,11 @@ public class Heart implements Serializable {
     @Expose
     private String id;
 
-    public Double getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(Double value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 
@@ -46,14 +46,6 @@ public class Heart implements Serializable {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getDateFormatted() {
-        Date d2 = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm dd-MM-yyy");
-        sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
-        String formattedDate = sdf.format(d2);
-        return formattedDate;
     }
 
 }

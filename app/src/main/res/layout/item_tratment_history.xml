@@ -16,11 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
+
                 android:orientation="vertical"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="30dp"
-                >
+                android:layout_height="30dp">
                 <TextView
                     android:textSize="20sp"
                     android:text="@{track.value}"
@@ -41,7 +41,7 @@
                 <TextView
                     android:textSize="20sp"
                     android:textColor="@color/textColor"
-                    android:text="@{track.dateFormatted}"
+                    android:text="@{track.realTime}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 

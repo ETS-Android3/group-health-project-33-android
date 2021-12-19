@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="treat"
+            type="com.iot.covid.duantotnghiep.model.device.TreatmentCourse" />
+    </data>
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Chi tiết lịch sử điều trị"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Nội dung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginBottom="25dp"
+            android:textSize="15sp"
+            android:text="@{treat.value}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="Thời gian đo :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="15sp"
+                android:text="@{treat.realTime}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

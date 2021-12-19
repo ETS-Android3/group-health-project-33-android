@@ -11,10 +11,16 @@ public class DataDevice implements Serializable {
 
     @SerializedName("_id")
     @Expose
-    private String id;
+    private String _id;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
     @SerializedName("key_device")
     @Expose
     private String keyDevice;
+    @SerializedName("state")
+    @Expose
+    private String state;
     @SerializedName("heart")
     @Expose
     private List<Heart> heart = null;
@@ -24,24 +30,21 @@ public class DataDevice implements Serializable {
     @SerializedName("temp")
     @Expose
     private List<Temp> temp = null;
-
-    @SerializedName("treatment_course")
-    @Expose
-    private List<TreatmentCourse> treatment_course = null;
-
     @SerializedName("track_history")
     @Expose
-    private List<TrackHistory> track_history = null;
-
-    @SerializedName("state")
+    private List<TrackHistory> trackHistory = null;
+    @SerializedName("treatment_course")
     @Expose
-    private List<Status> status;
+    private List<TreatmentCourse> treatmentCourse = null;
+    @SerializedName("__v")
+    @Expose
+    private Integer v;
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -51,6 +54,14 @@ public class DataDevice implements Serializable {
 
     public void setKeyDevice(String keyDevice) {
         this.keyDevice = keyDevice;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 
     public List<Heart> getHeart() {
@@ -77,28 +88,28 @@ public class DataDevice implements Serializable {
         this.temp = temp;
     }
 
-
-    public List<TreatmentCourse> getTreatment_course() {
-        return treatment_course;
+    public List<TrackHistory> getTrackHistory() {
+        return trackHistory;
     }
 
-    public void setTreatment_course(List<TreatmentCourse> treatment_course) {
-        this.treatment_course = treatment_course;
+    public void setTrackHistory(List<TrackHistory> trackHistory) {
+        this.trackHistory = trackHistory;
     }
 
-    public List<Status> getStatus() {
-        return status;
+    public List<TreatmentCourse> getTreatmentCourse() {
+        return treatmentCourse;
     }
 
-    public void setStatus(List<Status> status) {
-        this.status = status;
+    public void setTreatmentCourse(List<TreatmentCourse> treatmentCourse) {
+        this.treatmentCourse = treatmentCourse;
     }
 
-    public List<TrackHistory> getTrack_history() {
-        return track_history;
+    public Integer getV() {
+        return v;
     }
 
-    public void setTrack_history(List<TrackHistory> track_history) {
-        this.track_history = track_history;
+    public void setV(Integer v) {
+        this.v = v;
     }
+
 }

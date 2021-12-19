@@ -95,8 +95,14 @@ public class PatientRecords extends AppCompatActivity {
         recordsBinding.btnAddHistoryTrack.setOnClickListener(view ->{
             String data = recordsBinding.edtSymptom.getText().toString();
             JsonObject json = new JsonObject();
-            json.addProperty("key_device",patient.getKeyDevice());
-            json.addProperty("data",data);
+            if (getIntent().getStringExtra("intent").equals("notify")){
+                json.addProperty("key_device",getIntent().getStringExtra("keyDevice"));
+                json.addProperty("data",data);
+            }else {
+                json.addProperty("key_device",patient.getKeyDevice());
+                json.addProperty("data",data);
+            }
+
 
             Log.e("json",""+json);
             callService.updateTreatmentCourse(json).enqueue(new Callback<DataDevice>() {
@@ -104,7 +110,7 @@ public class PatientRecords extends AppCompatActivity {
                 public void onResponse(Call<DataDevice> call, Response<DataDevice> response) {
                     if (response.isSuccessful()){
                         if (response.body()!=null){
-                            Toast.makeText(PatientRecords.this, "Update History Track Success !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PatientRecords.this, "Thêm lịch sử điều trị thành công!", Toast.LENGTH_SHORT).show();
                         }
                         else {
                             Log.e("RECORD-TAG","failed-body-non : "+ response.body());
@@ -121,10 +127,12 @@ public class PatientRecords extends AppCompatActivity {
             });
 
         });
+
+
         recordsBinding.btnShowHistoryTrack.setOnClickListener(view -> {
             Intent i = new Intent(PatientRecords.this,ShowHistoryActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putSerializable("treatment", (Serializable) dataDevice.getTreatment_course());
+            bundle.putSerializable("treatment", (Serializable) dataDevice.getTreatmentCourse());
             i.putExtras(bundle);
             startActivity(i);
         });
@@ -148,8 +156,8 @@ public class PatientRecords extends AppCompatActivity {
                         Log.e("RECORD-TAG","success ");
                         dataDevice = response.body();
                         recordsBinding.setDevice(dataDevice);
-                        Collections.reverse(dataDevice.getTreatment_course());
-                        treatmentAdapter.setTreatmentCourseList(dataDevice.getTreatment_course());
+                        Collections.reverse(dataDevice.getTreatmentCourse());
+                        treatmentAdapter.setTreatmentCourseList(dataDevice.getTreatmentCourse());
                         recordsBinding.rcvListHistory.setAdapter(treatmentAdapter);
                         recordsBinding.rcvListHistory.setHasFixedSize(true);
                         recordsBinding.rcvListHistory.setLayoutManager(new LinearLayoutManager(PatientRecords.this, RecyclerView.VERTICAL, false));
@@ -188,7 +196,7 @@ public class PatientRecords extends AppCompatActivity {
                         Log.e("RECORD-TAG","success ");
                         dataDevice = response.body();
                         recordsBinding.setDevice(dataDevice);
-                        treatmentAdapter.setTreatmentCourseList(dataDevice.getTreatment_course());
+                        treatmentAdapter.setTreatmentCourseList(dataDevice.getTreatmentCourse());
                         recordsBinding.rcvListHistory.setAdapter(treatmentAdapter);
                         recordsBinding.rcvListHistory.setHasFixedSize(true);
                         recordsBinding.rcvListHistory.setLayoutManager(new LinearLayoutManager(PatientRecords.this, RecyclerView.VERTICAL, false));

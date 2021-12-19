@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.iot.covid.duantotnghiep.DetailTreatActivity;
 import com.iot.covid.duantotnghiep.databinding.ItemTreatmentBinding;
 import com.iot.covid.duantotnghiep.doctor.PatientRecords;
 import com.iot.covid.duantotnghiep.doctor.TreatmentDetailActivity;
@@ -40,13 +41,13 @@ public class TreatmentAdapter extends RecyclerView.Adapter<TreatmentAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.treatmentBinding.setTreatment(treatmentCourseList.get(position));
         holder.treatmentBinding.executePendingBindings();
-//        holder.treatmentBinding.treatmentItem.setOnClickListener(view -> {
-//            Intent i = new Intent( holder.treatmentBinding.getRoot().getContext(), TreatmentDetailActivity.class);
-//            Bundle bundle= new Bundle();
-//            bundle.putSerializable("treatment",treatmentCourseList.get(position));
-//            i.putExtras(bundle);
-//            holder.treatmentBinding.getRoot().getContext().startActivity(i);
-//        });
+        holder.treatmentBinding.treatmentItem.setOnClickListener(view -> {
+            Intent i = new Intent( holder.treatmentBinding.getRoot().getContext(), DetailTreatActivity.class);
+            Bundle bundle= new Bundle();
+            bundle.putSerializable("treatment",treatmentCourseList.get(position));
+            i.putExtras(bundle);
+            holder.treatmentBinding.getRoot().getContext().startActivity(i);
+        });
     }
 
     @Override
